@@ -1,11 +1,15 @@
-const Controller = () => {
+const Controller = ({ onClickButton }) => {
+    const buttonValues = [-1, -10, -100, 100, 10, 1];
+
     return <div>
-        <button>-1</button>
-        <button>-10</button>
-        <button>-100</button>
-        <button>+100</button>
-        <button>+10</button>
-        <button>+1</button>
+        {buttonValues.map((value) => (
+            <button 
+                key={value} 
+                onClick={() => onClickButton(value)}
+            >
+                {value > 0 ? `+${value}` : value}
+            </button>
+        ))}
     </div>
 }
 
