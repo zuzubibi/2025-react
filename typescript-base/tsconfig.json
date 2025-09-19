@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
-    "target": "ES5",
+    "target": "ESNext",
     "module": "esnext",
     "outDir": "dist",
-    "strict": false,
+    "strict": true,
+    // "strictNullChecks": false,
     "moduleDetection": "force",
+    "skipLibCheck": true,
   },
   "ts-node": {
     "esm": true
