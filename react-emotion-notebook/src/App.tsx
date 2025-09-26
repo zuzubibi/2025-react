@@ -28,7 +28,7 @@ function App() {
         {[...Array(5)].map((_, index) => (
           <img
             key={index + 1}
-            src={getEmotionImage(index + 1)}
+            src={(getEmotionImage as (emotionId: number) => string)(index + 1)}
             alt={`emotion${index + 1}`}
             style={{ marginRight: '10px' }}
           />
