@@ -2,15 +2,13 @@ import './App.css'
 import { 
   Routes,
   Route,
-  // Link,
-  // useNavigate,
 } from 'react-router-dom';
 import Home from "./pages/Home";
 import New from "./pages/New";
 import Diary from "./pages/Diary";
 import NotFound from './pages/NotFound';
-// import getEmotionImage from './util/get-emotion-image.js';
 import Button from './components/Button';
+import Header from './components/Header';
 
 // 1. "/": 모든 일기를 조회하는 Home 페이지
 // 2. "/new": 새로운 일기를 작성하는 New 페이지
@@ -19,6 +17,11 @@ import Button from './components/Button';
 function App() {
   return (
     <>
+      <Header
+        title={"header"}
+        leftChild={<Button text={'Left'}></Button>}
+        rightChild={<Button text={'Right'}></Button>}
+      />
       <Button 
         text={"123"} 
         type={"DEFAULT"}
