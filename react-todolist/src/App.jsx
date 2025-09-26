@@ -4,11 +4,15 @@ import {
   useRef,
   useReducer,
   useCallback,
-  createContext
+  createContext,
+  useMemo
 } from 'react'
 import Header from './components/Header'
 import List from './components/List'
 import Editor from './components/Editor'
+
+export const TodoStateContext = createContext();
+export const TodoDispatchContext = createContext();
 
 const mockData = [
   {
@@ -47,8 +51,6 @@ function reducer(state, action) {
       return state;
   }
 }
-export const TodoContext = createContext();
-
 function App() {
   const [todos, dispatch] = useReducer(reducer, mockData);
   const idRef = useRef(3);
@@ -78,20 +80,24 @@ function App() {
       targetId: targetId,
     })
   }, []);
+  const memorizedDispath = useMemo(() => {
+    return {
+      onCreate,
+      onUpdate,
+      onDelete,
+    }
+  });
 
   return (
     <div className="App">
       <Header/>
-      <TodoContext.Provider
-        value={{
-          todos,
-          onCreate,
-          onUpdate,onDelete 
-        }}
-      >
-        <Editor/>
-        <List/>
-      </TodoContext.Provider> 
+      <TodoStateContext.Provider value={todos}>
+        <TodoDispatchContext.Provider
+          value={{memorizedDispath}}>
+          <Editor/>
+          <List/>
+        </TodoDispatchContext.Provider>
+      </TodoStateContext.Provider>
     </div>
   )
 }
