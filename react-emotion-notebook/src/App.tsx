@@ -9,6 +9,7 @@ import Home from "./pages/Home.tsx";
 import New from "./pages/New.tsx";
 import Diary from "./pages/Diary.tsx";
 import NotFound from './pages/NotFound.tsx';
+import getEmotionImage from './util/get-emotion-image.js';
 
 // 1. "/": 모든 일기를 조회하는 Home 페이지
 // 2. "/new": 새로운 일기를 작성하는 New 페이지
@@ -23,6 +24,16 @@ function App() {
 
   return (
     <>
+      <div>
+        {[...Array(5)].map((_, index) => (
+          <img
+            key={index + 1}
+            src={getEmotionImage(index + 1)}
+            alt={`emotion${index + 1}`}
+            style={{ marginRight: '10px' }}
+          />
+        ))}
+      </div>
       <div>
         <Link to={"/"}>Home</Link>
         <Link to={"/new"}>New</Link>
