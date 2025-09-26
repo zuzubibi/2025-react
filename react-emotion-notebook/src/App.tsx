@@ -1,5 +1,5 @@
 import './App.css'
-import { Routes, Route} from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import Home from "./pages/Home.tsx";
 import New from "./pages/New.tsx";
 import Diary from "./pages/Diary.tsx";
@@ -10,12 +10,21 @@ import NotFound from './pages/NotFound.tsx';
 // 3. "/diary": 일기를 상세히 조회하는 Diary 페이지
 
 function App() {
-  return <Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="/new" element={<New />} />
-    <Route path="/diary/:id" element={<Diary />} />
-    <Route path="*" element={<NotFound />} />
-  </Routes>
+  return (
+    <>
+      <div>
+        <Link to={"/"}>Home</Link>
+        <Link to={"/new"}>New</Link>
+        <Link to={"/diary"}>Diary</Link>
+      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/new" element={<New />} />
+        <Route path="/diary" element={<Diary />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
+  )
 }
 
 export default App
