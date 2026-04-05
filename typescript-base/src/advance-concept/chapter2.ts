@@ -9,6 +9,9 @@ num1 = num2;
 /**
  * 객체 타입간의 호환성
  * -> 어떤 객체타입을 다른 객체타입으로 취급해도 괜찮은가?
+ * property를 기준으로 나누는 구조적 타입 시스템이다.
+ * Dog의 객체 타입은 Animal 객체의 타입에 해당될 수 있기 때문에
+ * Animal(super type)이 되고 Dob(sub type)이 되는것 임
  */
 
 type Animal = {
@@ -62,9 +65,9 @@ book = programmingBook;
 /**
  * 초과 프로퍼티 검사
  * 특징: 선언할때 객체 리터럴로 값을 명시할때, 만약 없는 프로퍼티도 같이 등록하면 오류남.
+ * 해결 방법: 객체 타입에 정의된 프로퍼티만을 정의해야 한다.
  * 다만, 할당은 아님. 
  */
-
 
 let book2: Book = {
     name: '한 입 크기로 잘라먹는 리액트',
@@ -72,4 +75,4 @@ let book2: Book = {
     // skill: "reactjs ",
 }
 
-let book3: Book = programmingBook;
+let book3: Book = programmingBook; // 허용 됨

@@ -1,3 +1,4 @@
+"use strict";
 // any
 // 특정 변수의 타입을 우리가 확실히 모를때
 // 타입 검사를 다 없앰 (타입스크립트의 이점을 없애는 것) -> 런타임에러 나올 가능성 높음
@@ -19,4 +20,3 @@ unknownVar = () => { };
 if (typeof unknownVar === 'number') {
     num = unknownVar;
 }
-export {};

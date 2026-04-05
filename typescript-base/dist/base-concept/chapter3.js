@@ -1,3 +1,4 @@
+"use strict";
 // object
 let user = {
     id: 1,
@@ -6,5 +7,4 @@ let user = {
 let config = {
     apiKey: "My API KEY",
 };
-export {};
 // config.apiKey = 'hacked';

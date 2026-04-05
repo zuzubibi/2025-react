@@ -1,3 +1,4 @@
+"use strict";
 // number
 let num1 = 123;
 let num2 = -123;
@@ -29,4 +30,3 @@ console.log(unde1);
 let numA = 10;
 let strA = 'hello';
 let boolA = true;
-export {};

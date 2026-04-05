@@ -1,3 +1,4 @@
+"use strict";
 // 배열
 let numArr = [1, 2, 3];
 let strArr = ["hello", "im", "winterlood"];
@@ -20,4 +21,3 @@ const user = [
     ['최아무개', 4],
     ['홍길동', 2],
 ];
-export {};
