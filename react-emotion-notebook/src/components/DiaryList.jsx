@@ -13,7 +13,7 @@ const DiaryList = () => {
                 <Button text={"새 일기 쓰기"} type="POSITIVE"></Button>
             </div>
             <div className="list_wrapper">
-                <DiaryItem></DiaryItem>
+                <DiaryItem/>
             </div>
         </div>
     )

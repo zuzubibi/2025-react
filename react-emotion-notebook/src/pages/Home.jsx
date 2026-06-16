@@ -7,7 +7,7 @@ const Home = () => {
         <div>
             <Header
                 leftChild={<Button text={"<"}/>}
-                title={"2025년 9월"}
+                title={"2026년 6월"}
                 rightChild={<Button text={">"}/>}
             />
             <DiaryList/>
